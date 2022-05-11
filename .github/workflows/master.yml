@@ -56,13 +56,11 @@ jobs:
       with:
         node-version: '12.18.2'
 
-    - name: Install npm dependencies
+    - name: Install npm dependencies and build
       run: |
         cd client
         npm ci
-
-    - name: Run build task
-      run: npm run build
+        npm run build
 
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@main
